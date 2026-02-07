@@ -1,5 +1,7 @@
 # LLM-Assisted PRA COREP Reporting Assistant
 
+Video Link:-https://drive.google.com/file/d/1Hd6ElUFa59jxMjX9727CHbT6mvLc2luT/view?usp=sharing
+
 A modular, production-style prototype for automated regulatory reporting using Groq API and RAG (Retrieval-Augmented Generation).
 
 ## Features
