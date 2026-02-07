@@ -1,0 +1,65 @@
+CRR Article 36 - Regulatory Deductions from CET1
+
+Article 36 of the Capital Requirements Regulation (CRR) specifies the deductions that must be made from Common Equity Tier 1 (CET1) capital. These deductions ensure the quality and consistency of CET1 capital across institutions.
+
+Mandatory Deductions from CET1:
+
+1. Intangible assets (Row 350):
+   - Goodwill: Premium paid over fair value in business acquisitions
+   - Mortgage servicing rights: Rights to service mortgage loans
+   - Deferred tax assets related to temporary differences
+   - Investments in own shares (treasury shares)
+   - Defined benefit pension fund assets
+
+2. Investments in financial sector entities:
+   - Exceeding 10% of CET1 capital in single entity
+   - Reciprocal holdings with other financial institutions
+   - Must be deducted to prevent double counting of capital
+
+3. Securitisation positions:
+   - Exposures to securitisation tranches not meeting criteria
+   - Significant risk transfer requirements not met
+   - Must be deducted from CET1 capital
+
+4. Credit risk transfer instruments:
+   - Credit derivatives that do not meet risk transfer criteria
+   - Guarantees that do not provide sufficient risk mitigation
+   - Must be deducted if they do not effectively transfer risk
+
+Specific Treatment of Intangible Assets:
+
+Goodwill (Row 350):
+- Must be deducted in full from CET1
+- No partial recognition allowed
+- Arises from business acquisitions
+- Represents premium over fair value of identifiable assets
+
+Deferred Tax Assets (Row 360):
+- Only deductible if not recoverable within 12 months
+- Must be assessed for realizability
+- Related to temporary timing differences
+- May be partially recognized if conditions met
+
+COREP Template C 01.00 Mapping:
+- Row 350: Intangible assets (including goodwill)
+- Row 360: Deferred tax assets
+- Row 370: Investments in own shares
+- Row 380: Other deductions
+
+Calculation Methodology:
+- Deductions are made directly from CET1 capital
+- No offsetting against other capital items
+- Must be calculated before AT1 and Tier 2 capital
+- Total deductions affect final CET1 amount
+
+Regulatory Requirements:
+- All deductions must be fully justified
+- Supporting documentation must be maintained
+- Changes in deductions must be explained
+- Audit trail required for regulatory review
+
+References:
+- CRR Article 36(1): List of mandatory deductions
+- CRR Article 36(2): Treatment of intangible assets
+- CRR Article 36(3): Investment deduction thresholds
+- EBA Guidelines on application of deductions

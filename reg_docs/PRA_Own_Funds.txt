@@ -1,0 +1,40 @@
+PRA Rulebook - Own Funds Requirements
+
+The Prudential Regulation Authority (PRA) requires UK banks to maintain adequate own funds to ensure financial stability and protect depositors. Own funds represent the bank's capital base and serve as a buffer against unexpected losses.
+
+CET1 Capital Components:
+- Ordinary share capital: Common shares issued by the bank that fully absorb losses
+- Retained earnings: Accumulated profits that have not been distributed to shareholders
+- Other comprehensive income: Equity reserves from unrealized gains and losses
+
+Regulatory Deductions from CET1:
+- Intangible assets: Goodwill, mortgage servicing rights, and other intangible assets
+- Deferred tax assets: Tax assets that may not be realizable in stress scenarios
+- Investments in own instruments: Holdings of own capital instruments
+
+AT1 Capital:
+- Contingent convertible bonds (CoCos): Instruments that convert to equity or are written down in stress
+- Other instruments that meet specific criteria for loss absorption
+
+Tier 2 Capital:
+- Subordinated debt: Debt instruments with lower priority than senior debt
+- General provisions: Reserves for potential losses on banking assets
+
+Reporting Requirements:
+- All amounts must be reported in GBP for UK banks
+- Template C 01.00 must be completed quarterly
+- Regulatory references must be maintained for audit purposes
+- Data gaps must be identified and explained
+
+Key Regulatory References:
+- PRA Rulebook Chapter 2: Capital Requirements
+- CRR Article 26: Definition of CET1 capital
+- CRR Article 36: Regulatory deductions
+- CRR Article 51: AT1 capital instruments
+- CRR Article 62: Tier 2 capital instruments
+
+Validation Rules:
+- CET1 must be positive before any deductions
+- AT1 and Tier 2 cannot exceed 50% and 100% of CET1 respectively
+- All deductions must be properly justified with regulatory references
+- Template calculations must reconcile to summary totals

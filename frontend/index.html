@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRA COREP Reporting Assistant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-university"></i>
+                    <h1>PRA COREP Assistant</h1>
+                </div>
+                <div class="header-status">
+                    <div class="status-indicator" id="system-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Checking...</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- System Status Dashboard -->
+            <section class="status-dashboard">
+                <div class="dashboard-grid">
+                    <div class="status-card" id="api-card">
+                        <div class="card-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>API Server</h3>
+                            <div class="status-info">
+                                <span class="status-dot" id="api-status"></span>
+                                <span id="api-status-text">Checking...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="status-card" id="docs-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Documents</h3>
+                            <div class="status-info">
+                                <span class="status-dot" id="docs-status"></span>
+                                <span id="docs-status-text">Checking...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="status-card" id="groq-card">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Hugging Face AI</h3>
+                            <div class="status-info">
+                                <span class="status-dot" id="groq-status"></span>
+                                <span id="groq-status-text">Checking...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="status-card" id="validation-card">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Validation</h3>
+                            <div class="status-info">
+                                <span class="status-dot" id="validation-status"></span>
+                                <span id="validation-status-text">Ready</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Query Section -->
+            <section class="query-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-edit"></i> Reporting Scenario</h2>
+                    <p>Enter your bank's capital composition for COREP reporting</p>
+                </div>
+
+                <div class="query-container">
+                    <div class="input-group">
+                        <textarea 
+                            id="query-input" 
+                            placeholder="Example: The bank has £120m ordinary share capital, £30m retained earnings, £10m AT1 instruments, and £8m intangible assets."
+                            rows="4"
+                        ></textarea>
+                    </div>
+
+                    <div class="examples-section">
+                        <h3>Quick Examples</h3>
+                        <div class="example-buttons">
+                            <button class="example-btn" onclick="setQuery('The bank has £120m ordinary share capital, £30m retained earnings, £10m AT1 instruments, and £8m intangible assets.')">
+                                <i class="fas fa-play"></i>
+                                Basic Capital Structure
+                            </button>
+                            <button class="example-btn" onclick="setQuery('Our bank holds £50m in ordinary shares, £15m retained earnings, no AT1 instruments, and £2m in goodwill that needs deduction.')">
+                                <i class="fas fa-play"></i>
+                                With Goodwill Deduction
+                            </button>
+                            <button class="example-btn" onclick="setQuery('Bank reports £200m CET1 capital consisting of £180m ordinary shares and £20m retained earnings, with £5m intangible deductions and £25m AT1 instruments.')">
+                                <i class="fas fa-play"></i>
+                                Complex Structure
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="action-section">
+                        <button id="generate-btn" class="generate-btn" onclick="generateReport()">
+                            <i class="fas fa-magic"></i>
+                            Generate COREP Report
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <section class="loading-section" id="loading-section" style="display: none;">
+                <div class="loading-content">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                    <h3>Analyzing Scenario</h3>
+                    <p>Generating COREP report with regulatory compliance validation...</p>
+                    <div class="loading-steps">
+                        <div class="step" id="step-retrieval">
+                            <i class="fas fa-search"></i>
+                            <span>Retrieving regulatory documents</span>
+                        </div>
+                        <div class="step" id="step-analysis">
+                            <i class="fas fa-brain"></i>
+                            <span>AI analysis with Groq</span>
+                        </div>
+                        <div class="step" id="step-validation">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Regulatory validation</span>
+                        </div>
+                        <div class="step" id="step-complete">
+                            <i class="fas fa-check"></i>
+                            <span>Report generation complete</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="results-section" style="display: none;">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-line"></i> COREP Report Results</h2>
+                </div>
+
+                <!-- Summary Metrics -->
+                <div class="summary-metrics" id="summary-metrics">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-value" id="cet1-total">-</div>
+                            <div class="metric-label">Total CET1</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="at1-total">-</div>
+                            <div class="metric-label">Total AT1</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="tier2-total">-</div>
+                            <div class="metric-label">Total Tier 2</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="validation-status-badge">-</div>
+                            <div class="metric-label">Validation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs Navigation -->
+                <div class="tabs-container">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" onclick="switchTab('template')">
+                            <i class="fas fa-table"></i>
+                            Template
+                        </button>
+                        <button class="tab-btn" onclick="switchTab('validation')">
+                            <i class="fas fa-shield-alt"></i>
+                            Validation
+                        </button>
+                        <button class="tab-btn" onclick="switchTab('sources')">
+                            <i class="fas fa-book"></i>
+                            Sources
+                        </button>
+                        <button class="tab-btn" onclick="switchTab('export')">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="tabs-content">
+                        <!-- Template Tab -->
+                        <div class="tab-pane active" id="template-tab">
+                            <div class="template-container">
+                                <div class="template-header">
+                                    <h3>COREP Template C 01.00 - Own Funds</h3>
+                                    <div class="template-info">
+                                        <span id="template-currency">GBP</span>
+                                        <span id="template-date">-</span>
+                                    </div>
+                                </div>
+                                <div class="template-table-container">
+                                    <table class="template-table" id="template-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Row</th>
+                                                <th>Description</th>
+                                                <th>Amount</th>
+                                                <th>Notes</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="template-tbody">
+                                            <!-- Dynamic content -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Validation Tab -->
+                        <div class="tab-pane" id="validation-tab">
+                            <div class="validation-container">
+                                <div class="validation-summary" id="validation-summary">
+                                    <!-- Dynamic content -->
+                                </div>
+                                <div class="validation-details" id="validation-details">
+                                    <!-- Dynamic content -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sources Tab -->
+                        <div class="tab-pane" id="sources-tab">
+                            <div class="sources-container">
+                                <div class="sources-list" id="sources-list">
+                                    <!-- Dynamic content -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Export Tab -->
+                        <div class="tab-pane" id="export-tab">
+                            <div class="export-container">
+                                <h3>Export Options</h3>
+                                <div class="export-buttons">
+                                    <button class="export-btn" onclick="exportReport('json')">
+                                        <i class="fas fa-file-code"></i>
+                                        JSON
+                                    </button>
+                                    <button class="export-btn" onclick="exportReport('csv')">
+                                        <i class="fas fa-file-csv"></i>
+                                        CSV
+                                    </button>
+                                    <button class="export-btn" onclick="exportReport('html')">
+                                        <i class="fas fa-file-alt"></i>
+                                        HTML
+                                    </button>
+                                    <button class="export-btn" onclick="exportReport('pdf')">
+                                        <i class="fas fa-file-pdf"></i>
+                                        PDF
+                                    </button>
+                                </div>
+                                <div class="export-preview" id="export-preview">
+                                    <!-- Dynamic content -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 PRA COREP Reporting Assistant | LLM-Powered Regulatory Reporting</p>
+                <div class="footer-links">
+                    <a href="#" onclick="showAbout()">About</a>
+                    <a href="#" onclick="showHelp()">Help</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>

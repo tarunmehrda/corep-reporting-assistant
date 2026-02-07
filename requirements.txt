@@ -1,0 +1,12 @@
+groq
+sentence-transformers
+faiss-cpu
+fastapi
+uvicorn
+pydantic
+streamlit
+requests
+numpy
+transformers
+torch
+python-dotenv

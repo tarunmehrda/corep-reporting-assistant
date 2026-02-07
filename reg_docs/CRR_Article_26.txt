@@ -1,0 +1,47 @@
+CRR Article 26 - Common Equity Tier 1 Capital
+
+Article 26 of the Capital Requirements Regulation (CRR) defines the composition of Common Equity Tier 1 (CET1) capital for EU institutions, which applies to UK banks through retained EU law.
+
+CET1 Capital shall consist of the following elements:
+
+1. Ordinary share capital (including share premium account):
+   - Common shares issued by the institution
+   - Share premium and related reserves
+   - Must be fully paid up and non-redeemable
+   - Must have no fixed maturity or redemption date
+   - Must rank paripassu with ordinary shares
+
+2. Retained earnings:
+   - Accumulated after-tax profits not distributed to shareholders
+   - Includes current year profits after appropriations
+   - Must be available to absorb losses on a going concern basis
+   - Reported in row 020 of COREP template C 01.00
+
+3. Other disclosed reserves:
+   - Legal reserve funds where required by law
+   - Other reserves that meet CET1 criteria
+   - Must be freely available to absorb losses
+
+4. Additional Tier 1 instruments that meet specific criteria:
+   - Instruments that are permanently written down upon trigger
+   - Must be subordinated to all other claims
+   - Must have no fixed maturity
+   - Must be loss-absorbing on a going concern basis
+
+Exclusions from CET1:
+- Preference shares that are redeemable
+- Shares with fixed dividend obligations
+- Shares held by the institution itself (treasury shares)
+- Instruments with embedded derivatives that materially affect their characteristics
+
+COREP Template Mapping:
+- Row 010: Ordinary share capital and share premium
+- Row 020: Retained earnings
+- Row 030: Other disclosed reserves
+- Row 040: Other CET1 instruments
+
+Regulatory References:
+- CRR Article 26(1): Definition of CET1 capital items
+- CRR Article 26(2): Exclusions from CET1
+- CRR Delegated Regulation 2015/61: Detailed criteria for CET1 instruments
+- EBA Guidelines on CET1 capital instruments

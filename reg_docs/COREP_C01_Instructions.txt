@@ -1,0 +1,96 @@
+COREP C 01.00 Template Instructions
+
+Template C 01.00 - Own Funds Instructions for Reporting
+
+This template is used for reporting the composition of own funds according to the Capital Requirements Regulation (CRR) and PRA Rulebook requirements.
+
+Template Structure:
+
+Section 1: CET1 Capital (Rows 010-040)
+- Row 010: Ordinary share capital (including share premium account)
+- Row 020: Retained earnings (after tax)
+- Row 030: Other disclosed reserves
+- Row 040: Other CET1 instruments meeting criteria
+
+Section 2: AT1 Capital (Rows 120-130)
+- Row 120: AT1 instruments meeting criteria
+- Row 130: Other AT1 items
+
+Section 3: Tier 2 Capital (Rows 200-210)
+- Row 200: Tier 2 instruments meeting criteria
+- Row 210: Other Tier 2 items
+
+Section 4: Regulatory Deductions (Rows 350-380)
+- Row 350: Intangible assets (including goodwill)
+- Row 360: Deferred tax assets
+- Row 370: Investments in own shares
+- Row 380: Other regulatory deductions
+
+Reporting Requirements:
+
+Currency and Units:
+- All amounts must be reported in GBP for UK institutions
+- Values should be in thousands of GBP (000s)
+- Negative values for deductions only
+- Zero for non-applicable items
+
+Validation Rules:
+1. CET1 capital must be positive before deductions
+2. AT1 capital cannot exceed 50% of CET1 capital
+3. Tier 2 capital cannot exceed 100% of CET1 capital
+4. All deductions must be properly justified
+5. Template must reconcile to summary totals
+
+Data Quality Requirements:
+- Source documentation must be maintained
+- Regulatory references required for each item
+- Changes from previous period must be explained
+- Data gaps must be identified and documented
+
+Audit Trail Requirements:
+- Each populated field must reference regulatory source
+- Justification must include specific article or rule reference
+- Calculation methodology must be documented
+- Changes in accounting treatment must be explained
+
+Common Reporting Issues:
+
+1. Intangible Assets:
+   - Goodwill must be fully deducted (Row 350)
+   - No partial recognition allowed
+   - Must reference CRR Article 36
+
+2. Retained Earnings:
+   - Must be after-tax amounts
+   - Exclude proposed dividends
+   - Reference CRR Article 26(1)(c)
+
+3. AT1 Instruments:
+   - Must meet loss absorption criteria
+   - Cannot be redeemable at issuer's option
+   - Reference CRR Article 51
+
+4. Tier 2 Instruments:
+   - Must have minimum 5-year maturity
+   - Must be subordinated to senior debt
+   - Reference CRR Article 62
+
+Reporting Frequency:
+- Quarterly reporting required
+- Due within 20 working days of period end
+- Must be signed off by senior management
+- Subject to regulatory review and validation
+
+Template Completion Checklist:
+- [ ] All required fields completed
+- [ ] Currency correctly set to GBP
+- [ ] Regulatory references provided
+- [ ] Calculations verified
+- [ ] Validation checks passed
+- [ ] Audit trail documented
+- [ ] Management sign-off obtained
+
+Contact Information:
+For template queries: PRA Supervision Team
+For technical issues: COREP Support Desk
+For regulatory guidance: PRA Rulebook Team
